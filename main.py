@@ -19,6 +19,5 @@ if st.button('Pesquisar'):
 
     caminho, nome_planilha = base.gerador_de_caminho(data)
     st.table(base.baixar(caminho, nome_planilha))
-    set= True
 
 
