@@ -21,12 +21,13 @@ class TabelaBase:
         
 
         df = pd.read_excel(BytesIO(res.content), dtype=str, usecols="A:H", header=4, index_col=None, sheet_name=nome_planilha)
+        self.salvar_tabela_como_imagem(df)
 
         
 
         # df = df.dropna(how='all', axis=0).dropna(how='all', axis=1).fillna("")
 
-        return df
+        
     
 
     def salvar(self, df):
