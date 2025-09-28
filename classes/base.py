@@ -124,7 +124,7 @@ class TabelaBase:
         return filename
     
 
-    def df_para_html_selecionadas(df, colunas_selecionadas):
+    def df_para_html_selecionadas(self, df, colunas_selecionadas):
         """
         Recebe um DataFrame e uma lista de colunas a exibir.
         Retorna uma tabela HTML estilizada.
