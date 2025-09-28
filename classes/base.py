@@ -3,6 +3,7 @@ import pandas as pd
 from io import BytesIO
 import dataframe_image as dfi
 import streamlit as st
+import matplotlib.pyplot as plt
 
 
 class TabelaBase:
@@ -21,11 +22,11 @@ class TabelaBase:
 
         df = pd.read_excel(BytesIO(res.content), dtype=str, usecols="A:H", header=4, index_col=None, sheet_name=nome_planilha)
 
-        dfi.export(df, 'planilha.png')
+        
 
         # df = df.dropna(how='all', axis=0).dropna(how='all', axis=1).fillna("")
 
-        return st.image('planilha.png', width="stretch")
+        return df
     
 
     def salvar(self, df):
@@ -99,3 +100,15 @@ class TabelaBase:
         nome_planilha = f'{dia}(MANHÃ)'
 
         return(caminho_final, nome_planilha)
+    
+    def salvar_tabela_como_imagem(df, filename="planilha.png"):
+        fig, ax = plt.subplots(figsize=(8, 4))  # ajusta o tamanho da imagem
+        ax.axis('off')  # tira os eixos
+        tabela = ax.table(cellText=df.values,
+                        colLabels=df.columns,
+                        loc='center')
+        tabela.auto_set_font_size(False)
+        tabela.set_fontsize(10)
+        tabela.scale(1.2, 1.2)  # aumenta tamanho
+        plt.savefig(filename, bbox_inches="tight", dpi=150)
+        plt.close(fig)
