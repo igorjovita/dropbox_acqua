@@ -144,7 +144,7 @@ class TabelaBase:
         for _, row in df.iterrows():
             html += '<tr>'
             for val in row:
-                html += f'<td style="border: 1px solid black; padding: 6px; text-align: center; font-size: 12px; height: 30px;">{val}</td>'
+                html += f'<td style="border: 1px solid black; padding: 6px; text-align: center; font-size: 16px; height: 30px;">{val}</td>'
             html += '</tr>'
 
 
