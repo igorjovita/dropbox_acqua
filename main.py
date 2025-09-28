@@ -28,7 +28,7 @@ if st.button('Pesquisar'):
     caminho, nome_planilha = base.gerador_de_caminho(data)
     image_path = base.baixar(caminho, nome_planilha)
     
-    st.image(image_path, caption="Tabela da planilha", use_column_width=True)
+    st.image(image_path, caption="Tabela da planilha", width="stretch")
 
     
 
