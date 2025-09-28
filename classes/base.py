@@ -137,7 +137,7 @@ class TabelaBase:
         # Cabeçalho
         html += '<tr>'
         for col in df.columns:
-            html += f'<th style="border: 1px solid black; padding: 6px; background-color: #f2f2f2;">{col}</th>'
+            html += f'<th style="border: 1px solid black; padding: 6px; background-color: #f2f2f2; text-align: center; vertical-align: middle;">{col}</th>'
         html += '</tr>'
 
         # Linhas
