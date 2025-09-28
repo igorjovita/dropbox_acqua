@@ -102,6 +102,7 @@ class TabelaBase:
 
         caminho_final = f"{caminho_base}/{ano}/{caminho_data}/{caminho_data}.xlsx"
         nome_planilha = f'{dia}(MANHÃ)'
+        st.write(nome_planilha)
 
         return(caminho_final, nome_planilha)
     
