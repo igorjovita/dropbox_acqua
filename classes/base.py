@@ -102,7 +102,7 @@ class TabelaBase:
 
         return(caminho_final, nome_planilha)
     
-    def salvar_tabela_como_imagem(df, filename="planilha.png"):
+    def salvar_tabela_como_imagem(self, df, filename="planilha.png"):
         fig, ax = plt.subplots(figsize=(8, 4))  # ajusta o tamanho da imagem
         ax.axis('off')  # tira os eixos
         tabela = ax.table(cellText=df.values,
