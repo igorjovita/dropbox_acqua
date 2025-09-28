@@ -31,7 +31,7 @@ if st.button('Pesquisar'):
     
 
     colunas = ["B", "D", "E", "F", "H"]  # Colunas que quer exibir
-    st.markdown(base.df_para_html_selecionadas(df, colunas), unsafe_allow_html=True)
+    st.markdown(base.df_para_html_selecionadas(df), unsafe_allow_html=True)
 
     
 
