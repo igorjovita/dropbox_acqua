@@ -19,14 +19,15 @@ class TabelaBase:
 
         _, res = self.dbx.files_download(caminho)
 
-        
+     
 
         df = pd.read_excel(BytesIO(res.content), dtype=str,  header=4, index_col=None, usecols=["#", "NOME", "COMISSÁRIO", "CERT", "FOTO", " ROUPA "], sheet_name=nome_planilha)
         df = df.fillna("")
 
-        
+    
 
         return df
+    
 
         
 
@@ -102,8 +103,7 @@ class TabelaBase:
 
         caminho_final = f"{caminho_base}/{ano}/{caminho_data}/{caminho_data}.xlsx"
         nome_planilha = f'{dia}(MANHÃ) ' if dia == '01' else f'{dia}(MANHÃ)'
-        st.write(caminho_final)
-        st.write(nome_planilha)
+        
         
 
         return(caminho_final, nome_planilha)
