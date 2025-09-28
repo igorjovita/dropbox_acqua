@@ -21,7 +21,7 @@ class TabelaBase:
 
         
 
-        df = pd.read_excel(BytesIO(res.content), dtype=str,  header=4, index_col=None, usecols=["NOME", "COMISSÁRIO", "CERT", "FOTO", " ROUPA "], sheet_name=nome_planilha)
+        df = pd.read_excel(BytesIO(res.content), dtype=str,  header=4, index_col=None, usecols=["#", "NOME", "COMISSÁRIO", "CERT", "FOTO", " ROUPA "], sheet_name=nome_planilha)
         df = df.fillna("")
 
         
