@@ -26,6 +26,5 @@ data = st.date_input('Insira a data da planilha', format='DD/MM/YYYY')
 if st.button('Pesquisar'):
 
     caminho, nome_planilha = base.gerador_de_caminho(data)
-    st.dataframe(base.baixar(caminho, nome_planilha), hide_index=True)
-
+    base.baixar()
 
