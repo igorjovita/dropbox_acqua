@@ -22,11 +22,10 @@ class TabelaBase:
 
         df = pd.read_excel(BytesIO(res.content), dtype=str,  header=4, index_col=None, usecols=["NOME", "COMISSÁRIO", "CERT", "FOTO", " ROUPA "], sheet_name=nome_planilha)
         df = df.dropna(how='all', axis=0).dropna(how='all', axis=1).fillna("")
-        image_path = self.salvar_tabela_como_imagem(df)
 
         
 
-        return image_path
+        return df
 
         
 
@@ -123,3 +122,31 @@ class TabelaBase:
         plt.close(fig)
         
         return filename
+    
+
+    def df_para_html_selecionadas(df, colunas_selecionadas):
+        """
+        Recebe um DataFrame e uma lista de colunas a exibir.
+        Retorna uma tabela HTML estilizada.
+        """
+        # Seleciona apenas as colunas desejadas
+        df_sel = df[colunas_selecionadas]
+
+        # Início da tabela
+        html = '<table style="border-collapse: collapse; width: 100%;">'
+
+        # Cabeçalho
+        html += '<tr>'
+        for col in df_sel.columns:
+            html += f'<th style="border: 1px solid black; padding: 6px; background-color: #f2f2f2;">{col}</th>'
+        html += '</tr>'
+
+        # Linhas
+        for _, row in df_sel.iterrows():
+            html += '<tr>'
+            for val in row:
+                html += f'<td style="border: 1px solid black; padding: 6px; text-align: center;">{val}</td>'
+            html += '</tr>'
+
+        html += '</table>'
+        return html
