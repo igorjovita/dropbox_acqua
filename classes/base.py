@@ -124,25 +124,24 @@ class TabelaBase:
         return filename
     
 
-    def df_para_html_selecionadas(self, df, colunas_selecionadas):
+    def df_para_html_selecionadas(self, df):
         """
         Recebe um DataFrame e uma lista de colunas a exibir.
         Retorna uma tabela HTML estilizada.
         """
         # Seleciona apenas as colunas desejadas
-        df_sel = df[colunas_selecionadas]
 
         # Início da tabela
         html = '<table style="border-collapse: collapse; width: 100%;">'
 
         # Cabeçalho
         html += '<tr>'
-        for col in df_sel.columns:
+        for col in df.columns:
             html += f'<th style="border: 1px solid black; padding: 6px; background-color: #f2f2f2;">{col}</th>'
         html += '</tr>'
 
         # Linhas
-        for _, row in df_sel.iterrows():
+        for _, row in df.iterrows():
             html += '<tr>'
             for val in row:
                 html += f'<td style="border: 1px solid black; padding: 6px; text-align: center;">{val}</td>'
