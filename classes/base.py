@@ -116,7 +116,8 @@ class TabelaBase:
         
         # 👉 Ajusta automaticamente a largura de todas as colunas
         tabela.auto_set_column_width(col=list(range(len(df.columns))))
-
+        
+        tabela.scale(1.2, 1.2)  # aumenta tamanho
         plt.savefig(filename, bbox_inches="tight", dpi=150)
         plt.close(fig)
         
