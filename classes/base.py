@@ -1,4 +1,5 @@
 import dropbox
+import imgkit
 import pandas as pd
 from io import BytesIO
 import dataframe_image as dfi
@@ -144,9 +145,11 @@ class TabelaBase:
         for _, row in df.iterrows():
             html += '<tr>'
             for val in row:
-                html += f'<td style="border: 1px solid black; padding: 6px; text-align: center; font-size: 16px; height: 30px;">{val}</td>'
+                html += f'<td style="border: 1px solid black; padding: 6px; text-align: center; font-size: 14px; height: 30px;">{val}</td>'
             html += '</tr>'
 
 
         html += '</table>'
-        return html
+
+        img = imgkit.from_string(html, 'tabela.png')
+        return img

@@ -30,9 +30,9 @@ if st.button('Pesquisar'):
     
     
 
-    colunas = ["B", "D", "E", "F", "H"]  # Colunas que quer exibir
-    st.markdown(base.df_para_html_selecionadas(df), unsafe_allow_html=True)
-
+    # colunas = ["B", "D", "E", "F", "H"]  # Colunas que quer exibir
+    # st.markdown(base.df_para_html_selecionadas(df), unsafe_allow_html=True)
+    st.image(df, width="stretch")
     
 
 
