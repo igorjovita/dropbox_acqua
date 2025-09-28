@@ -27,13 +27,13 @@ if st.button('Pesquisar'):
 
     caminho, nome_planilha = base.gerador_de_caminho(data)
     df = base.baixar(caminho, nome_planilha)
-    img = base.df_para_html_selecionadas(df)
+    base.df_para_html_selecionadas(df)
     
     
 
     # colunas = ["B", "D", "E", "F", "H"]  # Colunas que quer exibir
     # st.markdown(base.df_para_html_selecionadas(df), unsafe_allow_html=True)
-    st.image(img, width="stretch")
+    
     
 
 

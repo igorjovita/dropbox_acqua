@@ -151,5 +151,5 @@ class TabelaBase:
 
         html += '</table>'
 
-        img = imgkit.from_string(html, 'tabela.png')
-        return img
+        imgkit.from_string(html, 'tabela.png')
+        st.image("tabela.png")
