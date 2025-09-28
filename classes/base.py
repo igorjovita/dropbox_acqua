@@ -21,7 +21,7 @@ class TabelaBase:
         
 
         df = pd.read_excel(BytesIO(res.content), dtype=str,  header=4, index_col=None, sheet_name=nome_planilha)
-        print(df.columns)
+        st.write(df.columns)
         df = df.dropna(how='all', axis=0).dropna(how='all', axis=1).fillna("")
         image_path = self.salvar_tabela_como_imagem(df)
 
