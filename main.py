@@ -29,8 +29,8 @@ if st.button('Pesquisar'):
     try:
         df = base.baixar(caminho, nome_planilha)
         base.df_para_html_selecionadas(df)
-    except:
-        st.error('Planilha não encontrada')
+    except Exception as e:
+        st.error(f'{e}  - Planilha não encontrada')
     
 
     # colunas = ["B", "D", "E", "F", "H"]  # Colunas que quer exibir
