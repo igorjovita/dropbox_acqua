@@ -28,6 +28,7 @@ if st.button('Pesquisar'):
     caminho, nome_planilha = base.gerador_de_caminho(data)
     try:
         df = base.baixar(caminho, nome_planilha)
+        print(df)
         base.df_para_html_selecionadas(df)
     except Exception as e:
         st.error(f'{e}  - Planilha não encontrada')
