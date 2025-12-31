@@ -96,7 +96,7 @@ class TabelaBase:
             11: "Novembro",
             12: "Dezembro"
         }
-        ano, mes, dia = str(data).split('-')
+        ano, mes, dia = str(data).replace(' ', '').split('-')
         caminho_base = '/RESERVAS'
         nome_mes = MESES_PT[int(mes)].upper()
         caminho_data = f'{mes} {nome_mes} {ano}'
