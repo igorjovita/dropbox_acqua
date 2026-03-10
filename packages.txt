@@ -1,1 +1,3 @@
-wkhtmltopdf
+libqt5webkit5
+xfonts-75dpi
+xfonts-base
